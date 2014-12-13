@@ -1,0 +1,3 @@
+king_backend_homepage:
+    path:     /admin
+    defaults: { _controller: KingBackendBundle:Default:index }

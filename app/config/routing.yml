@@ -1,3 +1,7 @@
+king_backend:
+    resource: "@KingBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation

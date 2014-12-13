@@ -127,6 +127,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // king_backend_homepage
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'KingBackendBundle\\Controller\\DefaultController::indexAction',  '_route' => 'king_backend_homepage',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

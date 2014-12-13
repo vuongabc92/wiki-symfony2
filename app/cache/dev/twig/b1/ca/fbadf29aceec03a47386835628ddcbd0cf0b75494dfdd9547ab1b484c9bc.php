@@ -1,6 +1,6 @@
 <?php
 
-/* default/index.html.twig */
+/* :default:index.html.twig */
 class __TwigTemplate_b1cafbadf29aceec03a47386835628ddcbd0cf0b75494dfdd9547ab1b484c9bc extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -34,7 +34,7 @@ class __TwigTemplate_b1cafbadf29aceec03a47386835628ddcbd0cf0b75494dfdd9547ab1b48
 
     public function getTemplateName()
     {
-        return "default/index.html.twig";
+        return ":default:index.html.twig";
     }
 
     public function isTraitable()
