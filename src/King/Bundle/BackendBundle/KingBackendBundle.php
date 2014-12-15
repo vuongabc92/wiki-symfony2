@@ -1,6 +1,6 @@
 <?php
 
-namespace KingBackendBundle;
+namespace King\Bundle\BackendBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

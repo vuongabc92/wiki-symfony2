@@ -1,0 +1,14 @@
+king_backend_login:
+    path:     /login
+    defaults: { _controller: KingBackendBundle:Security:login }
+
+king_backend_login_check:
+    path: /admin/login_check
+
+king_backend_logout:
+    path: /admin/logout
+
+
+king_backend_homepage:
+    path:     /admin
+    defaults: { _controller: KingBackendBundle:Default:index }
