@@ -28,9 +28,12 @@ security:
             pattern:   ^/admin
             anonymous: ~
             form_login:
-                login_path: king_backend_login
                 check_path: king_backend_login_check
-
+                login_path: king_backend_login
+            logout:
+                path:   kingbackendbundle_logout
+                target: kingbackendbundle_login
+                
         demo_secured_area:
             pattern:    ^/demo/secured/
             # it's important to notice that in this case _demo_security_check and _demo_login
@@ -50,5 +53,4 @@ security:
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
-        - { path: ^/admin/account, roles: ROLE_SUPER_ADMIN }
         - { path: ^/admin, roles: ROLE_ADMIN }

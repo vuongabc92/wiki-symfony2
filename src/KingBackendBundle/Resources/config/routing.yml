@@ -6,4 +6,4 @@ king_backend_login:
     path:     /login
     defaults: { _controller: KingBackendBundle:Security:login }
 king_backend_login_check:
-    path: /login_check
+    path: /admin/login_check
