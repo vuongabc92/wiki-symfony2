@@ -1,1 +1,11 @@
 layout.hello: "Hallo"
+
+login.welcome: "Welcome login!"
+login.username: "Username"
+login.password: "Password"
+login.remember: "remember me"
+login.login: "Login"
+login.newacc: "New account"
+login.forgotpass: "Forgot password?"
+
+message.error.login: "Username/password incorrect!"

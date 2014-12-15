@@ -3,7 +3,7 @@
     {% if errorMessages|length > 0 %}
         <div class="_fwfl _bgr _tw _tc _fwb _fs13 auth-errors">
             {% for flashMessage in errorMessages %}
-                <i class="fa fa-remove"></i> {{ flashMessage.message }}
+                <i class="fa fa-remove"></i> {{ flashMessage }}
             {% endfor %}
         </div>
     {% endif %}
@@ -12,7 +12,7 @@
     {% if successMessages|length > 0 %}
     <div class="_fwfl _tw _tc _fwb _fs13 auth-success">
         {% for flashMessage in successMessages %}
-            <i class="fa fa-check"></i> {{ flashMessage.message }}
+            <i class="fa fa-check"></i> {{ flashMessage }}
         {% endfor %}
     </div>
     {% endif %}

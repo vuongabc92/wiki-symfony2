@@ -2,7 +2,8 @@
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use \Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class LoginType extends AbstractType{
 
@@ -30,8 +31,15 @@ class LoginType extends AbstractType{
         ));
     }
 
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array());
+    }
+
     public function getName(){
-        return null;
     }
 
 }
