@@ -1,0 +1,11 @@
+layout.hello: "Xin chào"
+
+login.welcome: "Vui lòng đăng nhập"
+login.username: "Tên đăng nhập"
+login.password: "Mật khẩu"
+login.remember: "ghi nhớ đăng nhập"
+login.login: "Đăng nhập"
+login.newacc: "Tạo tài khoản"
+login.forgotpass: "Quên mật khẩu?"
+
+message.error.login: "Tên đăng nhập/mật khẩu không chính xác!"

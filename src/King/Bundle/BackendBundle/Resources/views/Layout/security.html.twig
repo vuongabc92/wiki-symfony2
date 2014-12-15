@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} | Control center</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ asset('bundles/kingbackend/css/bootstrap.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/kingbackend/css/font-awesome.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/kingbackend/css/style.css') }}" rel="stylesheet" />
+    </head>
+    <body>
+        {% include 'KingBackendBundle:Layout:security_messages.html.twig' %}
+        {% block body %}{% endblock %}
+    </body>
+
+    <srcipt src="{{ asset('bundles/kingbackend/js/jquery_v1.11.1.js') }}"></srcipt>
+    <srcipt src="{{ asset('bundles/kingbackend/js/bootstrap.js') }}"></srcipt>
+    <srcipt src="{{ asset('bundles/kingbackend/js/script.js') }}"></srcipt>
+</html>

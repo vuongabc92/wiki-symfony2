@@ -53,4 +53,57 @@ class DemoController extends Controller
 
         return array('form' => $form->createView());
     }
+
+    /**
+     * Start challenge when link approved
+     *
+     * @param Digitas\Catendrier\Entity\Link $link Link object
+     * @param Silex\Application $em
+     *
+     * @return void
+     */
+    public function addChallengeWhenApproveLink($link, $em){
+
+        $challenge = $em->getRepository('Digitas\Catendrier\Entity\Challenge')->findOneBy(array(
+            'chosenDate' => $link->getChosenDate()
+        ));
+
+        $token = $app['security']->getToken();
+        $currentUser = '';
+        if (null !== $token) {
+            $user = $token->getUser();
+            $currentUser = $user->getUsername();
+        }
+        $now = new \DateTime('now');
+
+        if (is_null($challenge)) {
+
+            //Insert Challenge
+            $challenge = new Challenge();
+            $challenge->setChosenDate($link->getChosenDate());
+            $challenge->setCreatedDate($now);
+            $challenge->setCreatedBy($currentUser);
+            $em->persist($challenge);
+            $em->flush();
+        }
+
+        //Insert Challenge Duration
+        $challengeDuration = $em->getRepository('Digitas\Catendrier\Entity\ChallengeDuration')->getLatestDuration($challenge->getId());
+
+        if (is_null($challengeDuration) && !count($challengeDuration)) {
+
+
+            $chosenDate = clone $now;
+            $durationConfig = $app['config']['duration_interval'];
+            $challengeDurationTime = $chosenDate->add(new \DateInterval('PT' . $durationConfig . 'S'));
+
+            $challengeDuration = new ChallengeDuration();
+            $challengeDuration->setStartDate($now);
+            $challengeDuration->setEndDate($challengeDurationTime);
+
+            $challengeDuration->setChallenge($challenge);
+            $em->persist($challengeDuration);
+            $em->flush();
+        }
+    }
 }

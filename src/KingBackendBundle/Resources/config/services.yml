@@ -1,4 +1,0 @@
-services:
-#    king_backend.example:
-#        class: KingBackendBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
