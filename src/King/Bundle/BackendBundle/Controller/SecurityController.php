@@ -21,6 +21,13 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request)
     {
+        $user = new \King\Bundle\BackendBundle\Entity\User();
+        $plainPassword = '123456';
+        $encoded = $this->container->get('security.password_encoder')
+            ->encodePassword($user, $plainPassword);
+
+        var_dump($encoded);die;
+
         $session = $request->getSession();
         $form = $this->createForm(new LoginType());
         $lastUsername = '';
