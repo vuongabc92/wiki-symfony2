@@ -2,32 +2,27 @@ security:
     encoders:
         King\Bundle\BackendBundle\Entity\User:
             algorithm: bcrypt
-
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+            cost: 12
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    ryan:
-                        password: $2a$12$w/aHvnC/XNeDVrrl65b3dept8QcKqpADxUlbraVXXsC03Jam5hvoO
-                        roles: 'ROLE_USER'
-                    admin:
-                        password: $2a$12$HmOsqRDJK0HuMDQ5Fb2.AOLMQHyNHGD0seyjU3lEVusjT72QQEIpW
-                        roles: 'ROLE_ADMIN'
         kingbackendbundle:
             entity:
                 class: KingBackendBundle:User
                 property: username
+                
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_MASTER: [ROLE_USER, ROLE_ADMIN, ROLE_SUPER_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_GOD: [ROLE_USER, ROLE_ADMIN, ROLE_SUPER_ADMIN, ROLE_MASTER, ROLE_ALLOWED_TO_SWITCH]
+    
     firewalls:
         secured_area:
-            pattern:   ^/admin
+            provider: kingbackendbundle
+            pattern: ^/admin
             anonymous: ~
             form_login:
                 check_path: king_backend_login_check
-                provider: kingbackendbundle
             logout:
                 path:   king_backend_logout
                 target: king_backend_login

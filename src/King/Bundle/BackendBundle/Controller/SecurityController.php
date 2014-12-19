@@ -3,8 +3,7 @@
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
-use King\Bundle\BackendBundle\Form\LoginType,
-    Symfony\Component\Translation\Translator;
+use King\Bundle\BackendBundle\Form\LoginType;
 
 /**
  * Security controller
@@ -21,11 +20,15 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request)
     {
+//        $user = new \King\Bundle\BackendBundle\Entity\User();
+//        $plainPassword = '123456';
+//        $encoded = $this->container->get('security.password_encoder')->encodePassword($user, $plainPassword);
+//
+//        var_dump($encoded);die;
 
-
+        
         $session = $request->getSession();
         $form = $this->createForm(new LoginType());
-        $lastUsername = '';
 
         if ($request->attributes->has(Security::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(Security::AUTHENTICATION_ERROR);
