@@ -1,5 +1,11 @@
 {% extends "KingBackendBundle:Layout:security.html.twig" %}
 
+{% block title %}Login{% endblock %}
+
+{% block style %}
+<link href="{{ asset('bundles/kingbackend/css/auth-style.css') }}" rel="stylesheet" />
+{% endblock %}
+
 {% block body %}
     <div class="container">
         <div class="auth">
@@ -22,12 +28,12 @@
 
                             <input type="hidden" name="_target_path" value="/admin" />
 
-                            <button type="submit" class="_fwfl _fc0 _r3 _tw _bgb _fwb auth-btn">{{ 'login.login'|trans({}, 'KingBackendBundle') }}</button>
+                            <button type="submit" class="_fwfl _fc0 _r3 _tw _bgb _fwb _o0 auth-btn">{{ 'login.login'|trans({}, 'KingBackendBundle') }}</button>
                         {{ form_end(form) }}
                     </div>
                 </div>
                 <div class="_fwfl auth-footer">
-                    <a class="_w50 _fl _tb _td_i _tc auth-foot-nav auth-foot-nav-left" href="#">{{ 'login.newacc'|trans({}, 'KingBackendBundle') }}</a>
+                    <a class="_w50 _fl  _tb _td_i _tc auth-foot-nav auth-foot-nav-left" href="#">{{ 'login.newacc'|trans({}, 'KingBackendBundle') }}</a>
                     <a class="_w50 _fl _tb _td_i _tc auth-foot-nav" href="#">{{ 'login.forgotpass'|trans({}, 'KingBackendBundle') }}</a>
                 </div>
             </div>
