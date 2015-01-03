@@ -169,10 +169,9 @@ body{font-family:'lucida grande',tahoma,verdana,arial,sans-serif;background-colo
 .auth-content{max-width:280px;margin:20px auto;}
 .auth-welcome{margin:20px 0;}
 .auth-form{}
-.auth-field{height:40px;border:solid 2px #ddd;padding:5px 10px;}
+.auth-field{height:40px;border:solid 2px #ddd;padding:5px 10px;margin-top:15px;}
 .auth-field:hover{border-color:#ccc;}
 .auth-field:focus{border-color:#007aff;}
-.auth-password{margin-top:15px;}
 .auth-remember{margin-top:15px;}
 .auth-remember-checkbox{}
 .auth-remember-txt{margin:0 0 0 5px;font-weight:normal !important;}
@@ -196,6 +195,7 @@ body{font-family:'lucida grande',tahoma,verdana,arial,sans-serif;background-colo
 .search-block{width:630px;}
 .form-search{width:450px;}
 .input-header-search{height:34px;padding:0 10px;border:solid 1px #ddd;outline:none;}
+.input-header-search:focus{border-color:#007aff;}
 .btn-search-header{width:30px;height:32px;margin:1px 0 0 -32px;background-color:#fff;border:none;outline:none;}
 .header-location{height:34px;width:120px;line-height:34px;margin-left:10px;}
 
@@ -208,4 +208,5 @@ body{font-family:'lucida grande',tahoma,verdana,arial,sans-serif;background-colo
 .product-container{}
 .product-tree{}
 .product-tree>li{width:310px;float:left;margin:0 20px 20px 0;}
+.product-tree>li._product-no-margin-right{margin-right:0;}
 ._product{height:400px;border:solid 1px #007aff}
