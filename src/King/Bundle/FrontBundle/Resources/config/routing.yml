@@ -1,0 +1,14 @@
+#FO Home page
+king_front_homepage:
+    path:     /
+    defaults: { _controller: KingFrontBundle:Default:index }
+
+#FO Register new user page
+king_front_register:
+    path:     /dang-ky
+    defaults: { _controller: KingFrontBundle:Security:register }
+
+#FO Login page
+king_front_login:
+    path:     /dang-nhap
+    defaults: { _controller: KingFrontBundle:Security:register }

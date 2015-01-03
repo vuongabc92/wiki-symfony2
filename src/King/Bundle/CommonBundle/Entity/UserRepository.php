@@ -1,6 +1,6 @@
 <?php
 
-namespace King\Bundle\BackendBundle\Entity;
+namespace King\Bundle\CommonBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;

@@ -1,14 +1,14 @@
 security:
     encoders:
-        King\Bundle\BackendBundle\Entity\User:
+        King\Bundle\CommonBundle\Entity\User:
             algorithm: bcrypt
             cost: 12
 
     providers:
-        kingbackendbundle:
+        kingcommonbundle:
             entity:
-                class: KingBackendBundle:User
-                property: username
+                class: KingCommonBundle:User
+                property: email
                 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER
@@ -18,7 +18,7 @@ security:
     
     firewalls:
         secured_area:
-            provider: kingbackendbundle
+            provider: kingcommonbundle
             pattern: ^/admin
             anonymous: ~
             form_login:

@@ -1,0 +1,10 @@
+#FO common
+fo.common.email: "Email"
+fo.common.fullname: "Full name"
+fo.common.pass: "Password"
+fo.common.passconfirm: "Password confirmation"
+fo.common.login: "Login"
+fo.common.forgotpass: "Forgot password?"
+
+#FO register
+fo.register: "Register"

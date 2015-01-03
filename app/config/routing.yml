@@ -1,3 +1,11 @@
+king_common:
+    resource: "@KingCommonBundle/Resources/config/routing.yml"
+    prefix:   /
+
+king_front:
+    resource: "@KingFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
 king_backend:
     resource: "@KingBackendBundle/Resources/config/routing.yml"
     prefix:   /

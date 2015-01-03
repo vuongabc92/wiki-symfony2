@@ -4,9 +4,9 @@
         <title>{% block title %}{% endblock %} | Halloo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{ asset('bundles/kingbackend/css/bootstrap.css') }}" rel="stylesheet" />
-        <link href="{{ asset('bundles/kingbackend/css/font-awesome.css') }}" rel="stylesheet" />
-        <link href="{{ asset('bundles/kingbackend/css/style.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/kingfront/css/bootstrap.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/kingfront/css/font-awesome.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/kingfront/css/style.css') }}" rel="stylesheet" />
         {% block style %}{% endblock %}
     </head>
     <body>
@@ -41,9 +41,9 @@
                             
                             {#    HEADER LOGIN/SIGNUP    #}
                             <div class="_fr">
-                                <a href="#">Login</a>
+                                <a href="{{ path('king_front_login') }}">Login</a>
                                 <span >/</span>
-                                <a href="#">Register</a>
+                                <a href="{{ path('king_front_register') }}">Register</a>
                             </div>
                             {#    END HEADER LOGIN/SIGNUP    #}
                         </div>
@@ -86,7 +86,7 @@
         {#   END BODY    #}
     </body>
 
-    <srcipt src="{{ asset('bundles/kingbackend/js/jquery_v1.11.1.js') }}"></srcipt>
-    <srcipt src="{{ asset('bundles/kingbackend/js/bootstrap.js') }}"></srcipt>
-    <srcipt src="{{ asset('bundles/kingbackend/js/script.js') }}"></srcipt>
+    <srcipt src="{{ asset('bundles/kingfront/js/jquery_v1.11.1.js') }}"></srcipt>
+    <srcipt src="{{ asset('bundles/kingfront/js/bootstrap.js') }}"></srcipt>
+    <srcipt src="{{ asset('bundles/kingfront/js/script.js') }}"></srcipt>
 </html>

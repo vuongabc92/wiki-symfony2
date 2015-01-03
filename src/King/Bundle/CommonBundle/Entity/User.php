@@ -1,6 +1,6 @@
 <?php
 
-namespace King\Bundle\BackendBundle\Entity;
+namespace King\Bundle\CommonBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * User
  *
  * @ORM\Table(name="king_users")
- * @ORM\Entity(repositoryClass="King\Bundle\BackendBundle\Entity\UserRepository")
+ * @ORM\Entity(repositoryClass="King\Bundle\CommonBundle\Entity\UserRepository")
  */
 class User implements UserInterface, \Serializable
 {
@@ -26,23 +26,23 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=32)
+     * @ORM\Column(name="email", type="string", length=100, unique=TRUE)
      */
-    private $username;
-
+    private $email;
+    
     /**
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=64)
      */
     private $password;
-
+    
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=100)
+     * @ORM\Column(name="full_name", type="string", length=64)
      */
-    private $email;
+    private $fullName;
     
     /**
      * @ORM\ManyToMany(targetEntity="Role", inversedBy="users")
@@ -55,7 +55,7 @@ class User implements UserInterface, \Serializable
      *
      * @ORM\Column(name="is_active", type="boolean")
      */
-    private $isActive;
+    private $isActive = true;
     
     /**
      * @var \DateTime
@@ -88,31 +88,31 @@ class User implements UserInterface, \Serializable
     {
         return $this->id;
     }
-
+    
     /**
-     * Set username
+     * Set email
      *
-     * @param string $username
+     * @param string $email
      *
      * @return User
      */
-    public function setUsername($username)
+    public function setEmail($email)
     {
-        $this->username = $username;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get username
+     * Get email
      *
      * @return string
      */
-    public function getUsername()
+    public function getEmail()
     {
-        return $this->username;
+        return $this->email;
     }
-
+    
     /**
      * Set password
      *
@@ -136,29 +136,29 @@ class User implements UserInterface, \Serializable
     {
         return $this->password;
     }
-
+    
     /**
-     * Set email
+     * Set fullName
      *
-     * @param string $email
+     * @param string $fullName
      *
      * @return User
      */
-    public function setEmail($email)
+    public function setFullName($fullName)
     {
-        $this->email = $email;
+        $this->fullName = $fullName;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get fullName
      *
      * @return string
      */
-    public function getEmail()
+    public function getFullName()
     {
-        return $this->email;
+        return $this->fullName;
     }
 
     /**
@@ -285,4 +285,31 @@ class User implements UserInterface, \Serializable
         ) = unserialize($serialized);
     }
 
+    public function getUsername() {
+        
+    }
+
+
+    /**
+     * Add roles
+     *
+     * @param \King\Bundle\CommonBundle\Entity\Role $roles
+     * @return User
+     */
+    public function addRole(\King\Bundle\CommonBundle\Entity\Role $roles)
+    {
+        $this->roles[] = $roles;
+    
+        return $this;
+    }
+
+    /**
+     * Remove roles
+     *
+     * @param \King\Bundle\CommonBundle\Entity\Role $roles
+     */
+    public function removeRole(\King\Bundle\CommonBundle\Entity\Role $roles)
+    {
+        $this->roles->removeElement($roles);
+    }
 }

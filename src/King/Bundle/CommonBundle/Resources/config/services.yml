@@ -1,0 +1,4 @@
+services:
+#    king_common.example:
+#        class: King\Bundle\CommonBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,4 @@
+#Register
+fo.register.email: "Email"
+fo.register.pass: "Password"
+fo.register.passconfirm: "Password confirmation"

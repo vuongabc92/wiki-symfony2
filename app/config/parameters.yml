@@ -12,3 +12,5 @@ parameters:
     mailer_password: null
     locale: en
     secret: ThisTokenIsNotSoSecretChangeIt
+    role_user: ROLE_USER
+    role_shoper: ROLE_SHOPER

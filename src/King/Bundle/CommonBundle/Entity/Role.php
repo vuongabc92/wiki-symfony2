@@ -1,6 +1,6 @@
 <?php
 
-namespace King\Bundle\BackendBundle\Entity;
+namespace King\Bundle\CommonBundle\Entity;
 
 use Symfony\Component\Security\Core\Role\RoleInterface;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Role
  *
  * @ORM\Table(name="king_roles")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="King\Bundle\CommonBundle\Entity\RoleRepository")
  */
 class Role implements RoleInterface
 {
